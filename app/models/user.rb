@@ -12,7 +12,8 @@ class User < ActiveRecord::Base
   validates :password, format: { with: /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}/,
                                  message: "must have at least one number, one uppercase letter and be longer than 4 characters"
                                }
-  
-  # regexlibistä
-  # /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{4,}/ 
+  def favorite_beer
+    return nil if ratings.empty?
+    ratings.order(score: :desc).limit(1).first.beer
+  end
 end

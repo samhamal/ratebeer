@@ -33,6 +33,8 @@ gem 'byebug', group: [:development, :test]
 # salasanat 
 gem 'bcrypt-ruby', '~> 3.1.2'
 
+gem 'httparty'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
@@ -53,6 +55,7 @@ group :test do
   gem 'capybara'
   gem 'launchy'
   gem 'simplecov', require: false
+  gem 'webmock'
 end
 
 
